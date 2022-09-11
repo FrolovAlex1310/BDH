@@ -1,0 +1,159 @@
+.heder1  {
+  text-align: center;
+}
+.none{
+border-style: none;
+width: 3px;
+}
+.img-z{
+  position: absolute;
+  left: 48px;
+  top: 190px;
+  z-index: 1;
+
+}
+h6  {
+height: 40px;
+width: 150px;
+text-align: center;
+}
+.down{
+height: 56px;
+}
+.enter{
+background-color: lightblue;
+}
+
+
+.index{
+text-align: right;
+}
+
+.radio-btn {
+border-style: solid;
+border-width: 2px;
+border-color: rgb(227, 214, 214);
+border-radius: 5px;
+width: 200px;
+margin: 1px;
+text-align: left;
+}
+
+.home-user {
+height: 80px;
+}
+.user-foto {
+  width: 40%;
+  height: auto;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+.user-boton{
+
+  padding-bottom: 10px;  
+  text-align: left;
+
+}
+
+.user-boton:link, .user-boton:visited {
+  background-color: rgb(61, 63, 197);
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.user-boton a:hover, a:active {
+  background-color: rgb(14, 41, 130);
+  border-radius: 10px;
+}
+/*.user-translit a:link, a:visited {
+  background-color: rgb(100, 178, 125);
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.user-translit a:hover, a:active {
+  background-color: rgb(47, 162, 107);
+  border-radius: 10px;
+}
+*/
+.user-reg-btn{
+  margin: 8px;
+  
+}
+.all-blog{
+background-color:rgba(196, 212, 199, 0.5);
+margin: 2px;
+padding-left:10px;
+}
+.coln-user{
+margin: 2px;
+padding-left:10px;
+}
+
+.left-col{
+  width: 100%;
+  background-color: rgb(249, 250, 250);
+}
+.center-col{
+  width:50%;
+  background-color: powderblue;
+  padding-left: 40px;
+  padding-right: 40px; 
+  margin-left: 20%;
+  margin-right: 30%;
+}
+.rigt-col{
+  background-color: rgb(249, 250, 250);
+width: 100%;
+}
+
+.input_500{
+  width: 505px;
+  }
+.input_400{
+  width: 405px;
+  }
+  .input_350{
+    width: 355px;
+    }
+.input_300{
+width: 305px;
+}
+
+.input_250{
+width: 255px;
+}
+.input_85{
+  width: 90px;
+  }
+
+.input-margin{
+margin: 10px;
+height: 40px;
+border-style: solid;
+border-color: rgb(201, 201, 201);
+border-width: 2px;
+border-radius: 5px;
+outline-width: 1px;
+}
+.div-form{
+  text-align:right;
+}
+.foto-button{
+  text-align: center;
+  
+  width: 270px;
+  
+}
+
+
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Редактирование статьи {% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <h1 class="display-4 fw-normal">Редактирование статьи</h1>
+    <form method="post">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="d-block mx-auto mb-4" src="/static/images/avatar/{{ current_user.avatar }}" alt="" width="300" height="300">
+                Заголовок:<input type="text" name="title" id="title" class="form-control" value="{{ article.title }}" placeholder="Введите название"><br>
+                Анонс:<textarea name="intro" id="intro"  class="form-control"  placeholder="Введите анонс">{{ article.intro }}</textarea><br>
+                
+            </div>
+            <div class="col-lg-8">
+                Основной текст:<textarea name="text" id="text" class="form-control" rows = "15" placeholder="Введите основной текст">{{ article.text }}</textarea><br>
+                <input type="submit" class="btn btn-success" value="Обновить">
+            </div> 
+            
+        </div>
+        
+        
+    </form>
+
+</div>  
+{% endblock %}

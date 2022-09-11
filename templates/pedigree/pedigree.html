@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div>
+        <h1>Все родословные</h1>
+    </div>
+    <div>
+        <a class="btn btn-warning" href="/create-article">Добавление новой собаки</a>
+    </div>
+    {% for el in articles %}
+    <div class="alert alert-info">
+        <h2> {{ el.title }} </h2>
+        <p> {{ el.intro }} </p>
+        <p><b> Дата: {{ el.date.date() }} </b></p>
+        <a href="/posts/{{  el.id }}" class="btn btn-warning">Детальнее</a>
+    </div>

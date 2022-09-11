@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <form method="post">
+        <div class="row">
+            <br><h3 class="heder1">Регистрация.</h3><br>
+            <div class="col-lg-3">
+            </div>
+            <div class="enter col-lg-3">
+
+                 <div class="user-boton">
+                     <br><input type="text" name="surname" id="surname" class="form-control" placeholder="Введите фамилию:" required autofocus><br>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Имя:" required><br>
+                    <input type="text" name="patronymic" id="patronymic" class="form-control" placeholder="Отчество:"required><br>
+                    <input type="text" name="initials" id="initials" class="form-control" placeholder="Инициалы:"required><br>
+                    <input type="text" name="phone" id="phone" class="form-control"  pattern="+[7-9]{1}[0-9]{9}"  placeholder="Телефон:" title="Phone number with 7-9 and remaing 9 digit with 0-9" required><br>
+                    <input type="text" name="addreshome" id="addreshome" class="form-control" placeholder="Домашний адрес:"><br>
+
+                 </div>
+            </div>
+            <div class="enter col-lg-3">
+                <div class="foto-button">
+                    <br><input type="email" name="email" id="email" class="form-control" placeholder="Email:"required><br>
+                    <input type="password"name="password" id="password" class="form-control" placeholder="Введите пароль" required><br>
+                     <input type="submit" class="btn btn-primary" value="Зарегистрировать">
+                    <br>
+
+                     </div>
+                </div>
+            <div class="col-lg-3">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

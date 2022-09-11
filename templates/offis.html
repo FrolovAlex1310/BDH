@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Мой оффис
+{% endblock %}
+
+{% block body %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+<h2>offis</h2>
+    <button class="tablink2" onclick="openPage('Info', this, 'blue')" id="defaultOpen"><img src="/static/images/logo/create2.png"  width="20" height="20"> Карточка</button>
+    <button class="tablink2" onclick="openPage('Blog', this, 'blue')"> <img src="/static/images/logo/create.png"  width="20" height="20"> Мои блоги</button>
+    <button class="tablink2" onclick="openPage('Dog', this, 'blue')"> <img src="/static/images/logo/dog.png"  width="20" height="20"> Мои собаки </button>
+    <button class="tablink2" onclick="openPage('Org', this, 'blue')"> <img src="/static/images/logo/org.png"  width="20" height="20"> Мои организации </button>
+    <button class="tablink2" onclick="openPage('Action', this, 'blue')"> <img src="/static/images/logo/action.png"  width="20" height="20"> Мои мероприятия </button>
+    <div id="Info" class="tabcontent">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="d-block mx-auto mb-4" src="/static/images/avatar/{{ current_user.avatar }}" alt="" width="300" height="300">
+            </div>
+            <div class="col-lg-4">
+                <input type="text" value="{{ user.surname }}" name="surname" id="surname" class="form-control" ><br>
+                <input type="text" value="{{ user.name }}" name="name" id="name" class="form-control" placeholder="Введите имя:" ><br>
+                <input type="text" value="{{ user.patronymic }}" name="patronymic" id="patronymic" class="form-control" placeholder="Введите отчество:"><br>
+                <input type="text" value="{{ user.initials }}" name="initials" id="initials" class="form-control" placeholder="Введите инициалы:"><br>
+                <textarea class="form-control" name="addreshome" placeholder="Домашний адрес:" >{{user.addreshome}}</textarea><br>
+            </div>
+            <div class="col-lg-4">
+                <input type="email" value="{{ user.email }}" name="email" id="email" class="form-control" placeholder="Введите email:"><br>
+                <input type="text" value="{{ user.phone }}" name="phone" id="phone" class="form-control"  pattern="+[7-9]{1}[0-9]{9}"  placeholder="Введите телефон:" title="Phone number with 7-9 and remaing 9 digit with 0-9" ><br>
+                <a href="/offis-user/{{ current_user.id }}" class="btn btn-primary">Изменить данные </a>
+            </div>
+        </div>
+    </div>
+    <div id="Blog" class="tabcontent">
+        <div class="row">
+            <div class="col-lg-6">
+                <p>Здесь расположены мои блоги, лента друзей и их объявления </p>
+                <a href="/posts-main" class="btn btn-primary"><img src="/static/images/logo/doc.png"  width="20" height="20"> Лента моя</a>
+            </div>
+            <div class="col-lg-6">
+н
+            </div>
+        </div>
+    </div>
+    <div id="Dog" class="tabcontent">
+
+    </div>
+    <div id="Org" class="tabcontent">
+
+    </div>
+    <div id="Action" class="tabcontent">
+
+    </div>
+</div>
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+{% endblock %}

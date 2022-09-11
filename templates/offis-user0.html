@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Кабинет
+{% endblock %}
+
+{% block body %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h2>Offis</h2>
+  <!--
+  <button class="tablink" onclick="openPage('Date', this, 'blue')" id="defaultOpen"><img src="/static/images/logo/create2.png"  width="20" height="20"> Основные данные</button>
+  <button class="tablink" onclick="openPage('Create', this, 'blue')"> <img src="/static/images/logo/create.png"  width="20" height="20"> Корректировка данных</button>
+  <button class="tablink" onclick="openPage('Dog', this, 'blue')"><img src="/static/images/logo/dog.png"  width="20" height="20"> Мои собаки</button>
+  <button class="tablink" onclick="openPage('About', this, 'blue')"><img src="/static/images/logo/org.png"  width="20" height="20"> Мои организации</button>
+
+  <div id="Date" class="tabcontent">
+
+  <div class="row">
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+      <div class="foto-button">
+        <h4>Карточка пользователя</h4><br>
+        <img class="d-block mx-auto mb-4" src="/static/images/avatar/{{ current_user.avatar }}" alt="" width="200" height="200">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <form method="post">
+        <div class="coln-user">
+          <input type="text" value="{{ user.surname }}" name="surname" id="surname" class="form-control" readonly><br>
+          <input type="text" value="{{ user.name }}" name="name" id="name" class="form-control" placeholder="Введите имя:" readonly><br>
+          <input type="text" value="{{ user.patronymic }}" name="patronymic" id="patronymic" class="form-control" placeholder="Введите отчество:"readonly><br>
+          <input type="text" value="{{ user.initials }}" name="initials" id="initials" class="form-control" placeholder="Введите инициалы:"readonly><br>
+          <textarea class="form-control" name="addreshome" placeholder="Домашний адрес:" readonly>{{user.addreshome}}</textarea><br>
+          <input type="email" value="{{ user.email }}" name="email" id="email" class="form-control" placeholder="Введите email:"readonly><br>
+          <input type="text" value="{{ user.phone }}" name="phone" id="phone" class="form-control"  pattern="+[7-9]{1}[0-9]{9}"  placeholder="Введите телефон:" title="Phone number with 7-9 and remaing 9 digit with 0-9" readonly><br>
+        </div>
+      </form>
+    </div>
+     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+       <form method="post">
+            <input type="text" value="{{ user.lsurname }}" name="lsurname" id="lsurname" class="form-control" placeholder="Фамилия (латинскими):"readonly><br>
+            <input type="text"  value="{{ user.lname }}" name="lname" id="lname" class="form-control" placeholder="Имя (латинскими):" readonly><br>
+            <input type="text" value="{{ user.lpatronymic }}"  name="lpatronymic" id="lpatronymic" class="form-control" placeholder="Отчество (латинскими):"readonly><br>
+            <input type="text" value="{{ user.linitials }}" name="linitials" id="linitials" class="form-control" placeholder="Инициалы (латинскими):"readonly><br>
+            <textarea class="form-control" name="lname" placeholder="Домашний адрес (латинскими):" readonly>{{ user.laddreshome }}</textarea>
+  </form>
+     </div>
+  </div>
+</div>
+
+
+<div id="Create" class="tabcontent">
+  <div class="row">
+    <div class="col-lg 4">
+      <h5>Фотография (аватар) пользователя:</h5>
+
+      <div class="foto-button">
+        <img class="d-block mx-auto mb-4" src="/static/images/avatar/{{ current_user.avatar }}" alt="" width="200" height="200">
+      </div>
+        <form action = "/avatar_uploader/{{ current_user.id }}" method = "POST" enctype = "multipart/form-data">
+<p> 1. Перед вставкой фото следует обрезать по форме квадрат:</p>
+      <p>2. Чтобы вставить или заменить фото:</p>
+      <input type = "file" name = "file" /><br>
+      <br><input class="btn btn-primary" type = "submit"/>
+          </form>
+
+    </div>
+    <div class="col-lg 8">
+      <form method="post">
+        <div class="row">
+          <div class="col-lg 6">
+            <div class="coln-user">
+          <input type="text" value="{{ user.surname }}" name="surname" id="surname" class="form-control" readonly><br>
+          <input type="text" value="{{ user.name }}" name="name" id="name" class="form-control" placeholder="Введите имя:" readonly><br>
+          <input type="text" value="{{ user.patronymic }}" name="patronymic" id="patronymic" class="form-control" placeholder="Введите отчество:"readonly><br>
+          <input type="text" value="{{ user.initials }}" name="initials" id="initials" class="form-control" placeholder="Введите инициалы:"readonly><br>
+          <textarea class="form-control" name="addreshome" placeholder="Домашний адрес:" readonly>{{user.addreshome}}</textarea><br>
+          <input type="email" value="{{ user.email }}" name="email" id="email" class="form-control" placeholder="Введите email:"readonly><br>
+          <input type="text" value="{{ user.phone }}" name="phone" id="phone" class="form-control"  pattern="+[7-9]{1}[0-9]{9}"  placeholder="Введите телефон:" title="Phone number with 7-9 and remaing 9 digit with 0-9" readonly><br>
+        </div>
+          </div>
+          <div class="col-lg 6">
+<input type="text" value="{{ user.lsurname }}" name="lsurname" id="lsurname" class="form-control" placeholder="Фамилия (латинскими):"readonly><br>
+            <input type="text"  value="{{ user.lname }}" name="lname" id="lname" class="form-control" placeholder="Имя (латинскими):" readonly><br>
+            <input type="text" value="{{ user.lpatronymic }}"  name="lpatronymic" id="lpatronymic" class="form-control" placeholder="Отчество (латинскими):"readonly><br>
+            <input type="text" value="{{ user.linitials }}" name="linitials" id="linitials" class="form-control" placeholder="Инициалы (латинскими):"readonly><br>
+            <textarea class="form-control" name="lname" placeholder="Домашний адрес (латинскими):" readonly>{{ user.laddreshome }}</textarea>
+        </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="Dog" class="tabcontent">
+  <h3>Контакт</h3>
+  <p>Свяжитесь с нами или зайдите на чашечку кофе.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>О Нас</h3>
+  <p>Кто мы и чем занимаемся.</p>
+</div>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+    </div>
+    <div class=" col-lg-3 col-md-4 col-sm-6 col-xs-12"><br>
+
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+  </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><br>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Мои организации:
+            </button></h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <a href="#" class="btn btn-primary">Открыть раздел</a><br>
+              <p> В этом разделе можно начать создавать кабинеты Ваших организаций.
+                В нем находиться перечень созданных Вами организаций и оганизаций в которые у Вас
+                имеется акцептированный доступ.Например клуб или другое объединение членом которого Вы являетесь.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Мои собаки
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <a href="#" class="btn btn-primary">Открыть раздел</a>
+              <p>
+                Это раздел портала на кототором можно зарегистрировать в базе вашу собаку.
+              На ней будет находиться список собак владельцем или заводчиком которых Вы являетесь.
+              С этой страницы Вы сможете подыскать собаку для вязки увидев ее родословную.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Мои блоги:
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <a href="#" class="btn btn-primary">Открыть раздел</a>
+              <p> Это раздел портала на котором можно писать статьи. Статьи будут размещаться в общей ленте и ленте пользователей
+                находящихся в общих с Вами организациями. Вы в своей ленте также будете видеть статьи написанные людьми входящими
+                в Ваши организации.
+            </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+</div>
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+{% endblock %}

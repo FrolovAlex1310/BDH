@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Вход в портал
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="left-col">
+
+    </div>
+    <div class="center-col">
+     <form action="/login" method="post">
+                 <h1>Вход в портал</h1>
+                 <input type="email" class="form-control" name="email" id="email" placeholder="Введите email"required autofocus><br>
+                 <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль" required><br>
+                 <div class="user-boton">
+                    <input type="submit" class="btn btn-primary" value="Войти">
+                 </div>
+             </form>
+    </div>
+    <div class="rigt-col">
+
+    </div>
+
+    
+
+  </div> <!-- /container -->
+
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/wp-content/themes/clear-theme/js/jquery.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-transition.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-alert.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-modal.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-dropdown.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-scrollspy.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-tab.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-tooltip.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-popover.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-button.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-collapse.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-carousel.js"></script>
+  <script src="/wp-content/themes/clear-theme/js/bootstrap-typeahead.js"></script>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Добавление статьи {% endblock %}
+
+{% block body %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Добавление статьи</h1>
+    <form method="post">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>Автор статьи: {{ current_user.surname  }} {{ current_user.name  }}</p><br>
+                <br> <input type="number" name="user" id="user"  value="{{ current_user.id  }}" class="none" readonly><br>
+                <img src="/static/images/avatar/{{ current_user.avatar  }}"  class="img-z" width="200" height="200"><br>
+                <br><br><br><br><br><input type="text" name="title" id="title" class="form-control" placeholder="Введите название"><br>
+                <textarea name="intro" id="intro" class="form-control" placeholder="Введите анонс"></textarea><br>
+            </div>
+            <div class="col-lg-9">               
+                
+                <textarea name="text" id="text" class="form-control" rows = "15" placeholder="Введите основной текст"></textarea><br>
+                <input type="submit" class="btn btn-success" value="Отправить">                       </div>
+            </div>
+        </div>
+    </form> 
+</div>
+{% endblock %}

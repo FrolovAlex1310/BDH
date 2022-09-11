@@ -1,0 +1,83 @@
+/* Контейнер подсказок */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* Если вы хотите многоточия под наведением курсора текстом */
+}
+
+/* Текст подсказки */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Расположите текста подсказки - см. примеры ниже! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Показ текста всплывающей подсказки при наведении указателя мыши на контейнер */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+/*_____________________________________________________________
+Вкладки
+
+/* Установите высоту тела и документа на 100%, чтобы включить "полные вкладки страницы" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Стиль cсылок на вкладку */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33%;
+}
+.tablink2 {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+.tablink2:hover {
+  background-color: #777;
+}
+
+/* Стиль содержимого вкладки (и добавить высоту: 100% для полного содержимого страницы) */
+.tabcontent {
+  color: rgb(2, 0, 0);
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Foto {background-color: rgb(201, 223, 201);}
+#Data {background-color: rgb(201, 223, 201);}
+#Pass {background-color: rgb(201, 223, 201);}
+#Info {background-color: rgb(201, 223, 201);}
+#Blog {background-color: rgb(201, 223, 201);}
+#Dog {background-color: rgb(201, 223, 201);}
+#Org {background-color: rgb(201, 223, 201);}
+#Action {background-color: rgb(201, 223, 201);}

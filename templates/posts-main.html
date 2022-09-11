@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Все статьи на сайте 
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <div>
+        <h1>Все мои статьи на сайте</h1>
+        <a class="btn btn-warning" href="/create-article">Добавление новой статьи</a>
+    </div>
+
+    <div class="row ">
+        {% for el in articles %}
+        <div class="col-sm-4 all-blog">
+            <h5>{{ el.title }}</h5>
+           <img src="/static/images/fotoart/{{ el.fotoart }}">
+            <p>{{ el.intro }}</p>
+            <p>Автор: {{ el.user }}</p>
+            <p><b> Дата: {{ el.date.date() }} </b></p>
+            <a href="/posts/{{  el.id }}" class="btn btn-warning">Детальнее</a>            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--/span-->
+
+
+
+{% endblock %}

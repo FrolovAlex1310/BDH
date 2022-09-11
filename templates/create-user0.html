@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Кабинет
+{% endblock %}
+
+{% block body %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <button class="tablink" onclick="openPage('Foto', this, 'blue')" id="defaultOpen"><img src="/static/images/logo/create2.png"  width="20" height="20"> Работа с фото</button>
+    <button class="tablink" onclick="openPage('Data', this, 'blue')"> <img src="/static/images/logo/create.png"  width="20" height="20"> Корректировка данных</button>
+    <button class="tablink" onclick="openPage('Pass', this, 'blue')"> <img src="/static/images/logo/pass.png"  width="20" height="20"> Корректировка пароля и контактов </button>
+
+    <div id="Foto" class="tabcontent">
+        <div class="row">
+                <div class="col-lg-6">
+                    <img class="d-block mx-auto mb-4" src="/static/images/avatar/{{ current_user.avatar }}" alt="" width="300" height="300">
+                </div>
+                <div class="col-lg-6">
+                    <h5>Фотография (аватар) пользователя:</h5>
+                    <p>1. Перед вставкой, фото аватара следует подготовить, обрезав по форме квадрат:</p>
+                    <form action = "/avatar_uploader/{{ current_user.id }}" method = "POST" enctype = "multipart/form-data">
+                        <p>2. Чтобы вставить или заменить фото:</p>
+                        <input type = "file" name = "file" /><br>
+                        <br><input class="btn btn-primary" type = "submit"/>
+                    </form>
+                </div>
+            </div>
+        <div class="foto-button"></div>
+    </div>
+    <div id="Data" class="tabcontent">
+        <form method="post">
+            <div class="coln-user">
+                <div class="row">
+                  <div class="col-lg-6">
+                      <p>Поля заполненные пользователем при регистрации:</p>
+                      <input type="text" value="{{ user.surname }}" name="surname" id="surname" class="form-control" ><br>
+                      <input type="text" value="{{ user.name }}" name="name" id="name" class="form-control" placeholder="Введите имя:" ><br>
+                      <input type="text" value="{{ user.patronymic }}" name="patronymic" id="patronymic" class="form-control" placeholder="Введите отчество:"><br>
+                      <input type="text" value="{{ user.initials }}" name="initials" id="initials" class="form-control" placeholder="Введите инициалы:"><br>
+                      <textarea class="form-control" name="addreshome" placeholder="Домашний адрес:" >{{user.addreshome}}</textarea><br>
+
+                    </div>
+                  <div class="col-lg-6">
+                      <p>Поля заполненные программой путем транслитерации:</p>
+                      <input type="text" value="{{ user.lsurname }}" name="lsurname" id="lsurname" class="form-control" placeholder="Фамилия (латинскими):"><br>
+                      <input type="text"  value="{{ user.lname }}" name="lname" id="lname" class="form-control" placeholder="Имя (латинскими):" ><br>
+                      <input type="text" value="{{ user.lpatronymic }}"  name="lpatronymic" id="lpatronymic" class="form-control" placeholder="Отчество (латинскими):"><br>
+                      <input type="text" value="{{ user.linitials }}" name="linitials" id="linitials" class="form-control" placeholder="Инициалы (латинскими):"><br>
+                      <textarea class="form-control" name="lname" placeholder="Домашний адрес (латинскими):" >{{ user.laddreshome }}</textarea>
+                      <p>Данные поля необходимы для корректного формирования родословных собак</p>
+                      <a href="#" class="btn btn-primary">Сохранить изменения</a>
+                  </div>
+              </div>
+            </div>
+        </form>
+    </div>
+    <div id="Pass" class="tabcontent">
+         <form method="post">
+             <div class="coln-user">
+                 <p> ghhgjhg</p>
+                 <input type="email" value="{{ user.email }}" name="email" id="email" class="form-control" placeholder="Введите email:"><br>
+                 <input type="text" value="{{ user.phone }}" name="phone" id="phone" class="form-control"  pattern="+[7-9]{1}[0-9]{9}"  placeholder="Введите телефон:" title="Phone number with 7-9 and remaing 9 digit with 0-9" ><br>
+                  <input type="password" value="{{ user.email }}" name="password" id="password" class="form-control" placeholder="Введите пароль:"><br>
+             </div>
+         </form>
+    </div>
+
+</div>
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+{% endblock %}
